@@ -1,0 +1,65 @@
+Models:
+    models *= Model
+;
+
+Model:
+    'model' name = ID '{'
+    elements *= ModelElement
+    '}' ';'
+;
+
+ModelElement:
+    name = ID '=' datatype = DataType
+;
+
+DataType:
+    textField = TextField | CharField = CharField | EmailField = EmailField | website = URLField | foreignkey = ForeignKey | dateTimeField = DateTimeField | integerField = IntegerField
+;
+
+TextField:
+    'TextField' '(' parameters *= Parameter[','] ')'
+;
+
+CharField:
+    'CharField' '(' parameters *= Parameter[','] ')'
+;
+EmailField:
+    'EmailField' '(' parameters *= Parameter[','] ')'
+;
+
+URLField:
+    'URLField' '(' parameters *= Parameter[','] ')'
+;
+
+ForeignKey:
+    'ForeignKey' '(' 'model' '=' model = ID ')'
+;
+
+DateTimeField:
+    'DateTimeField' '(' parameters *= Parameter[','] ')'
+;
+
+IntegerField:
+    'IntegerField' '(' parameters *= Parameter[','] ')'
+;
+
+
+Parameter:
+    null = Null | max_length = Max_Length
+;
+
+Max_Length:
+    'max_length' '=' number = Number
+;
+
+Number:
+    /[0-9]+/
+;
+
+Null:
+    'null' '=' value = Value
+;
+
+Value:
+    'True'
+;

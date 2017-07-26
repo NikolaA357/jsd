@@ -1,0 +1,31 @@
+model Country {
+    Id = CharField(max_length = 3)
+    Name = CharField(max_length = 20)
+    Zip_Code = CharField(max_length = 12)
+};
+
+model Cars{
+    Country = ForeignKey(model = Country)
+    Mark = CharField(max_length = 20)
+    Type = CharField(max_length = 20)
+    Models = CharField(max_length = 20)
+    Used =TextField(max_length = 60)
+    Description = TextField(max_length = 60)
+    Price = ForeignKey(model = Price )
+    Email =  EmailField(max_length = 30)
+    Color = CharField(max_length = 20)
+    EnginePower = ForeignKey(model = EnginePower)
+};
+
+model Price {
+    Models =  ForeignKey(model = Cars)
+    price =  IntegerField(max_length = 20)
+    D_of_Pr= DateTimeField(max_length = 30)
+};
+
+model EnginePower {
+    Power = IntegerField(max_length = 6)
+    Capacity = IntegerField(max_length = 6)
+    Torque = IntegerField(max_length = 5)
+};
+
