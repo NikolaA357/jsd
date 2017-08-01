@@ -9,8 +9,6 @@ model Cars{
     Mark = CharField(max_length = 20)
     Type = CharField(max_length = 20)
     Models = CharField(max_length = 20)
-    Used =TextField(max_length = 60)
-    Description = TextField(max_length = 60)
     Price = ForeignKey(model = Price )
     Email =  EmailField(max_length = 30)
     Color = CharField(max_length = 20)
@@ -18,14 +16,13 @@ model Cars{
 };
 
 model Price {
-    Models =  ForeignKey(model = Cars)
-    price =  IntegerField(max_length = 20)
-    D_of_Pr= DateTimeField(max_length = 30)
+
+    price =  CharField(max_length = 6)
 };
 
 model EnginePower {
-    Power = IntegerField(max_length = 6)
-    Capacity = IntegerField(max_length = 6)
-    Torque = IntegerField(max_length = 5)
+    Power = CharField(max_length = 6)
+    Capacity = CharField(max_length = 6)
+    Torque = CharField(max_length = 5)
 };
 

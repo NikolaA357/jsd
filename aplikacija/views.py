@@ -36,14 +36,14 @@ class CountryListView(generic.ListView):
 class CarsCreateView(CreateView):
 	template_name='.html'
 	model=Cars
-	fields = ['Country', 'Mark', 'Type', 'Models', 'Used', 'Description', 'Price', 'Email', 'Color', 'EnginePower']
+	fields = ['Country', 'Mark', 'Type', 'Models', 'Price', 'Email', 'Color', 'EnginePower']
 	success_url=reverse_lazy('')
 
 
 class CarsUpdateView(UpdateView):
 	template_name='.html'
 	model=Cars
-	fields = ['Country', 'Mark', 'Type', 'Models', 'Used', 'Description', 'Price', 'Email', 'Color', 'EnginePower']
+	fields = ['Country', 'Mark', 'Type', 'Models', 'Price', 'Email', 'Color', 'EnginePower']
 
 
 class CarsDeleteView(DeleteView):
@@ -62,14 +62,14 @@ class CarsListView(generic.ListView):
 class PriceCreateView(CreateView):
 	template_name='.html'
 	model=Price
-	fields = ['Models', 'price', 'D_of_Pr']
+	fields = ['price']
 	success_url=reverse_lazy('')
 
 
 class PriceUpdateView(UpdateView):
 	template_name='.html'
 	model=Price
-	fields = ['Models', 'price', 'D_of_Pr']
+	fields = ['price']
 
 
 class PriceDeleteView(DeleteView):
